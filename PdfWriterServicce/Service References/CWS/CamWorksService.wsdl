@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://CamWorksService.rapidmachining.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CamWorksService" targetNamespace="http://CamWorksService.rapidmachining.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://mach1:9003/v1?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://CamWorksService.rapidmachining.com/Imports">
+      <xsd:import schemaLocation="http://mach1:9003/v1?xsd=xsd0" namespace="http://CamWorksService.rapidmachining.com/" />
+      <xsd:import schemaLocation="http://mach1:9003/v1?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://mach1:9003/v1?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CamWorksService_GenerateNest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNest" />
+  </wsdl:message>
+  <wsdl:message name="CamWorksService_GenerateNest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CamWorksService_GetJobMakeQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobMakeQuantity" />
+  </wsdl:message>
+  <wsdl:message name="CamWorksService_GetJobMakeQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobMakeQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CamWorksService_GetAllStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStock" />
+  </wsdl:message>
+  <wsdl:message name="CamWorksService_GetAllStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CamWorksService">
+    <wsdl:operation name="GenerateNest">
+      <wsdl:input wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GenerateNest" message="tns:CamWorksService_GenerateNest_InputMessage" />
+      <wsdl:output wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GenerateNestResponse" message="tns:CamWorksService_GenerateNest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobMakeQuantity">
+      <wsdl:input wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GetJobMakeQuantity" message="tns:CamWorksService_GetJobMakeQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GetJobMakeQuantityResponse" message="tns:CamWorksService_GetJobMakeQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStock">
+      <wsdl:input wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GetAllStock" message="tns:CamWorksService_GetAllStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://CamWorksService.rapidmachining.com/CamWorksService/GetAllStockResponse" message="tns:CamWorksService_GetAllStock_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="CamWorksService">
+    <wsdl:port name="BasicHttpBinding_CamWorksService" binding="i0:BasicHttpBinding_CamWorksService">
+      <soap:address location="http://mach1:9003/v1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

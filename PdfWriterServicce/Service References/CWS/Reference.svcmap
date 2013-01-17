@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="243e8b7c-ada8-4400-a10e-7ccddeb0341f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://mach1:9003/v1" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="v1.wsdl" MetadataType="Wsdl" ID="84a5ec1e-0008-423c-9256-3b64d69db713" SourceId="1" SourceUrl="http://mach1:9003/v1?wsdl=wsdl0" />
+    <MetadataFile FileName="v1.xsd" MetadataType="Schema" ID="b2c7d92d-3900-4214-aa6d-d0f613d100b3" SourceId="1" SourceUrl="http://mach1:9003/v1?xsd=xsd2" />
+    <MetadataFile FileName="v11.xsd" MetadataType="Schema" ID="31abc0fc-9cd7-4fef-a5d1-913d97da12e5" SourceId="1" SourceUrl="http://mach1:9003/v1?xsd=xsd1" />
+    <MetadataFile FileName="v12.xsd" MetadataType="Schema" ID="1518b6b1-163e-4e1f-af6f-04086c22f6f1" SourceId="1" SourceUrl="http://mach1:9003/v1?xsd=xsd0" />
+    <MetadataFile FileName="CamWorksService.wsdl" MetadataType="Wsdl" ID="2988ed01-27f0-42f6-b9fb-8f529d65402a" SourceId="1" SourceUrl="http://mach1:9003/v1?wsdl" />
+    <MetadataFile FileName="v1.disco" MetadataType="Disco" ID="2733d73e-0401-4084-bc94-757eb08a112c" SourceId="1" SourceUrl="http://mach1:9003/v1?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
