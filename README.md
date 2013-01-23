@@ -4,7 +4,7 @@ PdfWriterService
 ###Summary
 
 Simple WCF service that has a few versioned endpoints, including an added method for returning a
-very simple PDF file. The service is ment to demonstrate how you would up-version a WCF service
+very simple PDF file. The service is meant to demonstrate how you would up-version a WCF service
 when you make changes to the schema or parameters.
 
 ###Credits
