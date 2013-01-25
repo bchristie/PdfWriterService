@@ -61,7 +61,10 @@ namespace PdfWriterService.Host
 
         protected override void OnStart(string[] args)
         {
-            this.EventLog.WriteEntry(String.Format("OnStart({0})", String.Join(",", args ?? new String[0])), EventLogEntryType.Information);
+            if (!Environment.UserInteractive)
+            {
+                this.EventLog.WriteEntry(String.Format("OnStart({0})", String.Join(",", args ?? new String[0])), EventLogEntryType.Information);
+            }
 
             foreach (IAmAHostedProcess service in this.hostedServices)
             {
@@ -71,21 +74,30 @@ namespace PdfWriterService.Host
 
         protected override void OnPause()
         {
-            this.EventLog.WriteEntry("OnPause()", EventLogEntryType.Information);
+            if (!Environment.UserInteractive)
+            {
+                this.EventLog.WriteEntry("OnPause()", EventLogEntryType.Information);
+            }
 
             this.OnStop();
         }
 
         protected override void OnContinue()
         {
-            this.EventLog.WriteEntry("OnContinue()", EventLogEntryType.Information);
+            if (!Environment.UserInteractive)
+            {
+                this.EventLog.WriteEntry("OnContinue()", EventLogEntryType.Information);
+            }
 
             this.OnStart(null);
         }
 
         protected override void OnStop()
         {
-            this.EventLog.WriteEntry("OnStop()", EventLogEntryType.Information);
+            if (!Environment.UserInteractive)
+            {
+                this.EventLog.WriteEntry("OnStop()", EventLogEntryType.Information);
+            }
 
             foreach (IAmAHostedProcess service in this.hostedServices)
             {
