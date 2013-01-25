@@ -94,13 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PdfWriterServicce\PdfWriterServicce.csproj">
-      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
-      <Name>PdfWriterServicce</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\PdfWriterServicce\App.config">
+    <None Include="..\PdfWriterService\App.config">
       <Link>App.config</Link>
     </None>
     <None Include="packages.config" />
