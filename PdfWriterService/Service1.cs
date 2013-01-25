@@ -46,4 +46,24 @@ namespace PdfWriterService
             return ms.ToArray();
         }
     }
+
+    public class Service4 : Service3, IService4
+    {
+        public Byte[] GenerateLargeFakePdfFile(Double fileSizeInMegabytes)
+        {
+            if (fileSizeInMegabytes < 0)
+            {
+                throw new ArgumentOutOfRangeException("fileSizeInMegabytes", "File size must ba  poitive number");
+            }
+            Int32 filesizeInBytes = (Int32)(fileSizeInMegabytes * 1024 * 1024);
+            if (filesizeInBytes > Int32.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("fileSizeInMegabytes", String.Format("File size cannot exceed {0:N2}mb", Int32.MaxValue / 1024 / 1024));
+            }
+            
+            Byte[] fakePdfFile = new Byte[filesizeInBytes];
+            new Random().NextBytes(fakePdfFile); //populate the file with random data
+            return fakePdfFile;
+        }
+    }
 }

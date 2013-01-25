@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PdfWriterService.Consumer.PdfSvc {
+namespace PdfWriterService.Consumer.PdfServiceV4 {
     using System.Runtime.Serialization;
     using System;
     
@@ -104,19 +104,23 @@ namespace PdfWriterService.Consumer.PdfSvc {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="PdfWriterService.V3", ConfigurationName="PdfSvc.PdfWriterServiceV3")]
-    public interface PdfWriterServiceV3 {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="PdfWriterService.V4", ConfigurationName="PdfServiceV4.PdfWriterServiceV4")]
+    public interface PdfWriterServiceV4 {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (PdfWriterService.V1) of message HelloWorldRequest does not match the default value (PdfWriterService.V3)
+        // CODEGEN: Generating message contract since the wrapper namespace (PdfWriterService.V1) of message HelloWorldRequest does not match the default value (PdfWriterService.V4)
         [System.ServiceModel.OperationContractAttribute(Action="PdfWriterService.V1/PdfWriterServiceV1/HelloWorld", ReplyAction="PdfWriterService.V1/PdfWriterServiceV1/HelloWorldResponse")]
-        PdfWriterService.Consumer.PdfSvc.HelloWorldResponse HelloWorld(PdfWriterService.Consumer.PdfSvc.HelloWorldRequest request);
+        PdfWriterService.Consumer.PdfServiceV4.HelloWorldResponse HelloWorld(PdfWriterService.Consumer.PdfServiceV4.HelloWorldRequest request);
         
-        // CODEGEN: Generating message contract since the wrapper namespace (PdfWriterService.V2) of message HelloWorld2Request does not match the default value (PdfWriterService.V3)
+        // CODEGEN: Generating message contract since the wrapper namespace (PdfWriterService.V2) of message HelloWorld2Request does not match the default value (PdfWriterService.V4)
         [System.ServiceModel.OperationContractAttribute(Action="PdfWriterService.V2/PdfWriterServiceV2/HelloWorld2", ReplyAction="PdfWriterService.V2/PdfWriterServiceV2/HelloWorld2Response")]
-        PdfWriterService.Consumer.PdfSvc.HelloWorld2Response HelloWorld2(PdfWriterService.Consumer.PdfSvc.HelloWorld2Request request);
+        PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Response HelloWorld2(PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Request request);
         
+        // CODEGEN: Generating message contract since the wrapper namespace (PdfWriterService.V3) of message GenerateReburnPDFRequest does not match the default value (PdfWriterService.V4)
         [System.ServiceModel.OperationContractAttribute(Action="PdfWriterService.V3/PdfWriterServiceV3/GenerateReburnPDF", ReplyAction="PdfWriterService.V3/PdfWriterServiceV3/GenerateReburnPDFResponse")]
-        byte[] GenerateReburnPDF(PdfWriterService.Consumer.PdfSvc.ReburnDTO reburnDto);
+        PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFResponse GenerateReburnPDF(PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="PdfWriterService.V4/PdfWriterServiceV4/GenerateLargeFakePdfFile", ReplyAction="PdfWriterService.V4/PdfWriterServiceV4/GenerateLargeFakePdfFileResponse")]
+        byte[] GenerateLargeFakePdfFile(double fileSizeinMegabytes);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -180,58 +184,104 @@ namespace PdfWriterService.Consumer.PdfSvc {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface PdfWriterServiceV3Channel : PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GenerateReburnPDF", WrapperNamespace="PdfWriterService.V3", IsWrapped=true)]
+    public partial class GenerateReburnPDFRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="PdfWriterService.V3", Order=0)]
+        public PdfWriterService.Consumer.PdfServiceV4.ReburnDTO reburnDto;
+        
+        public GenerateReburnPDFRequest() {
+        }
+        
+        public GenerateReburnPDFRequest(PdfWriterService.Consumer.PdfServiceV4.ReburnDTO reburnDto) {
+            this.reburnDto = reburnDto;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PdfWriterServiceV3Client : System.ServiceModel.ClientBase<PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3>, PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3 {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GenerateReburnPDFResponse", WrapperNamespace="PdfWriterService.V3", IsWrapped=true)]
+    public partial class GenerateReburnPDFResponse {
         
-        public PdfWriterServiceV3Client() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="PdfWriterService.V3", Order=0)]
+        public byte[] GenerateReburnPDFResult;
+        
+        public GenerateReburnPDFResponse() {
         }
         
-        public PdfWriterServiceV3Client(string endpointConfigurationName) : 
+        public GenerateReburnPDFResponse(byte[] GenerateReburnPDFResult) {
+            this.GenerateReburnPDFResult = GenerateReburnPDFResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface PdfWriterServiceV4Channel : PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PdfWriterServiceV4Client : System.ServiceModel.ClientBase<PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4>, PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4 {
+        
+        public PdfWriterServiceV4Client() {
+        }
+        
+        public PdfWriterServiceV4Client(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public PdfWriterServiceV3Client(string endpointConfigurationName, string remoteAddress) : 
+        public PdfWriterServiceV4Client(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PdfWriterServiceV3Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PdfWriterServiceV4Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PdfWriterServiceV3Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PdfWriterServiceV4Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PdfWriterService.Consumer.PdfSvc.HelloWorldResponse PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3.HelloWorld(PdfWriterService.Consumer.PdfSvc.HelloWorldRequest request) {
+        PdfWriterService.Consumer.PdfServiceV4.HelloWorldResponse PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4.HelloWorld(PdfWriterService.Consumer.PdfServiceV4.HelloWorldRequest request) {
             return base.Channel.HelloWorld(request);
         }
         
         public string HelloWorld() {
-            PdfWriterService.Consumer.PdfSvc.HelloWorldRequest inValue = new PdfWriterService.Consumer.PdfSvc.HelloWorldRequest();
-            PdfWriterService.Consumer.PdfSvc.HelloWorldResponse retVal = ((PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3)(this)).HelloWorld(inValue);
+            PdfWriterService.Consumer.PdfServiceV4.HelloWorldRequest inValue = new PdfWriterService.Consumer.PdfServiceV4.HelloWorldRequest();
+            PdfWriterService.Consumer.PdfServiceV4.HelloWorldResponse retVal = ((PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4)(this)).HelloWorld(inValue);
             return retVal.HelloWorldResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PdfWriterService.Consumer.PdfSvc.HelloWorld2Response PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3.HelloWorld2(PdfWriterService.Consumer.PdfSvc.HelloWorld2Request request) {
+        PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Response PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4.HelloWorld2(PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Request request) {
             return base.Channel.HelloWorld2(request);
         }
         
         public string HelloWorld2(string name) {
-            PdfWriterService.Consumer.PdfSvc.HelloWorld2Request inValue = new PdfWriterService.Consumer.PdfSvc.HelloWorld2Request();
+            PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Request inValue = new PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Request();
             inValue.name = name;
-            PdfWriterService.Consumer.PdfSvc.HelloWorld2Response retVal = ((PdfWriterService.Consumer.PdfSvc.PdfWriterServiceV3)(this)).HelloWorld2(inValue);
+            PdfWriterService.Consumer.PdfServiceV4.HelloWorld2Response retVal = ((PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4)(this)).HelloWorld2(inValue);
             return retVal.HelloWorld2Result;
         }
         
-        public byte[] GenerateReburnPDF(PdfWriterService.Consumer.PdfSvc.ReburnDTO reburnDto) {
-            return base.Channel.GenerateReburnPDF(reburnDto);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFResponse PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4.GenerateReburnPDF(PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFRequest request) {
+            return base.Channel.GenerateReburnPDF(request);
+        }
+        
+        public byte[] GenerateReburnPDF(PdfWriterService.Consumer.PdfServiceV4.ReburnDTO reburnDto) {
+            PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFRequest inValue = new PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFRequest();
+            inValue.reburnDto = reburnDto;
+            PdfWriterService.Consumer.PdfServiceV4.GenerateReburnPDFResponse retVal = ((PdfWriterService.Consumer.PdfServiceV4.PdfWriterServiceV4)(this)).GenerateReburnPDF(inValue);
+            return retVal.GenerateReburnPDFResult;
+        }
+        
+        public byte[] GenerateLargeFakePdfFile(double fileSizeinMegabytes) {
+            return base.Channel.GenerateLargeFakePdfFile(fileSizeinMegabytes);
         }
     }
 }

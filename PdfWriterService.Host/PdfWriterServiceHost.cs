@@ -31,6 +31,7 @@ namespace PdfWriterService.Host
             this.HostedServices.Add(new PdfWriterServiceHost<PdfWriterService.Service1>());
             this.HostedServices.Add(new PdfWriterServiceHost<PdfWriterService.Service2>());
             this.HostedServices.Add(new PdfWriterServiceHost<PdfWriterService.Service3>());
+            this.HostedServices.Add(new PdfWriterServiceHost<PdfWriterService.Service4>());
 
             this.CanHandlePowerEvent = true;
             this.CanHandleSessionChangeEvent = false;
@@ -66,9 +67,17 @@ namespace PdfWriterService.Host
                 this.EventLog.WriteEntry(String.Format("OnStart({0})", String.Join(",", args ?? new String[0])), EventLogEntryType.Information);
             }
 
+            Int32 count = 0;
             foreach (IAmAHostedProcess service in this.hostedServices)
             {
                 service.Start();
+
+                // add a small delay between service starts to allow the endpoints
+                // to be displayed consecutively instead of possibly broken up
+                if (count++ < this.hostedServices.Count())
+                {
+                    Thread.Sleep(500);
+                }
             }
         }
 
@@ -105,14 +114,9 @@ namespace PdfWriterService.Host
             }
         }
 
-        #region Run as console application
+        #region Console Application Hosting
 
-        // this is generally only ran while you're in the IDE running the service. A windows service does not use Main()
-        // so this essentially does what windows does in the backgroudn (in terms of spinning up the service and llowing
-        // you to access it)
-
-        [STAThread]
-        public static void Main(String[] args)
+        public static void HostWithinConsoleApplication(String[] args)
         {
             PdfWriterServiceHost service = new PdfWriterServiceHost();
             if (Environment.UserInteractive)
@@ -121,7 +125,7 @@ namespace PdfWriterService.Host
                 Thread.Sleep(TimeSpan.FromSeconds(1));
 
                 Console.Title = "Started";
-                Console.WriteLine("Your service is now running.");
+                Console.WriteLine("Your service{0} {1} now running.", service.HostedServices.Count() > 1 ? "s" : "", service.HostedServices.Count() > 1 ? "are" : "is");
                 ConsoleKeyInfo keyInfo;
                 Boolean runService = true;
                 while (runService)
@@ -260,7 +264,10 @@ namespace PdfWriterService.Host
 
                 foreach (var endpoint in host.Description.Endpoints)
                 {
-                    Debug.WriteLine(String.Format("{0}: {1}", typeof(TService).Name, endpoint.Address));
+                    if (Environment.UserInteractive)
+                    {
+                        Console.WriteLine(String.Format("{0}: {1}", typeof(TService).Name, endpoint.Address));
+                    }
                 }
 
                 this.StopService.WaitOne();

@@ -29,4 +29,11 @@ namespace PdfWriterService
         [OperationContract(Name = "GenerateReburnPDF")]
         Byte[] GenerateReburnPDF(ReburnDTO reburnDto);
     }
+
+    [ServiceContract(Namespace = "PdfWriterService.V4", Name = "PdfWriterServiceV4")]
+    public interface IService4 : IService3
+    {
+        [OperationContract(Name = "GenerateLargeFakePdfFile")]
+        Byte[] GenerateLargeFakePdfFile(Double fileSizeinMegabytes);
+    }
 }

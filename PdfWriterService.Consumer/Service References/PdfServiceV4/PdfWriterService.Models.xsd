@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="PdfWriterService.Models" elementFormDefault="qualified" targetNamespace="PdfWriterService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ReburnDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="CustomrName" nillable="true" type="xs:string" />
+      <xs:element name="EmployeeResponsibleID" nillable="true" type="xs:string" />
+      <xs:element name="Issue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReburnDTO" nillable="true" type="tns:ReburnDTO" />
+</xs:schema>

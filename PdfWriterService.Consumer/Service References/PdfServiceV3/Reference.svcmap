@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c336046f-a21e-49a1-a29e-d395355de21b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/PdfWriterService/v3/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PdfWriterService.V3.wsdl" MetadataType="Wsdl" ID="d008e8a4-e6dd-4292-ad38-acd933388c7f" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f8123639-d6ab-48e6-b438-3f1ea451e0fa" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="PdfWriterService.V1.xsd" MetadataType="Schema" ID="ed66ff42-eb31-4e6b-a40d-1b623f21b51a" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="881df7d9-4e7f-4007-a010-ed4220f24a25" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="PdfWriterService.V2.xsd" MetadataType="Schema" ID="0fd817cc-efae-4859-ba03-234d50fbe857" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="PdfWriterService.V3.xsd" MetadataType="Schema" ID="ab456bac-a88c-4ce1-9d67-6180e9540a9a" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+    <MetadataFile FileName="PdfWriterService.Models.xsd" MetadataType="Schema" ID="14cdd147-4185-497d-9cb2-880c26638258" SourceId="1" SourceUrl="http://localhost:8733/PdfWriterService/v3/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

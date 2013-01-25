@@ -9,7 +9,7 @@ namespace PdfWriterService.Models
     [DataContract(Namespace = "PdfWriterService.Models", Name = "ReburnDTO")]
     public class ReburnDTO
     {
-        [DataMember(Name = "CustomrName", IsRequired = true)]
+        [DataMember(Name = "CustomerName", IsRequired = true)]
         public String CustomerName { get; set; }
         
         [DataMember(Name = "EmployeeResponsibleID", IsRequired = true)]

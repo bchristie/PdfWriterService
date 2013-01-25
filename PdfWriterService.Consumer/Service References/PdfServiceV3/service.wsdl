@@ -34,7 +34,7 @@
   </wsdl:binding>
   <wsdl:service name="Service3">
     <wsdl:port name="BasicHttpBinding_PdfWriterServiceV3" binding="tns:BasicHttpBinding_PdfWriterServiceV3">
-      <soap:address location="http://localhost:8733/PdfWriterServicce/v3" />
+      <soap:address location="http://localhost:8733/PdfWriterService/v3" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -45,7 +45,22 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\PdfSvc\Reference.cs">
+    <Compile Include="Service References\PdfServiceV1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PdfServiceV2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PdfServiceV3\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PdfServiceV4\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -56,35 +71,113 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\PdfSvc\PdfWriterService.Models.xsd">
+    <None Include="Service References\PdfServiceV1\PdfWriterService.V1.wsdl" />
+    <None Include="Service References\PdfServiceV1\PdfWriterService.V1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PdfSvc\PdfWriterService.V1.xsd">
+    <None Include="Service References\PdfServiceV1\service.wsdl" />
+    <None Include="Service References\PdfServiceV1\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PdfSvc\PdfWriterService.V2.xsd">
+    <None Include="Service References\PdfServiceV2\PdfWriterService.V1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PdfSvc\PdfWriterService.V3.wsdl" />
-    <None Include="Service References\PdfSvc\PdfWriterService.V3.xsd">
+    <None Include="Service References\PdfServiceV2\PdfWriterService.V2.wsdl" />
+    <None Include="Service References\PdfServiceV2\PdfWriterService.V2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PdfSvc\service.wsdl" />
-    <None Include="Service References\PdfSvc\service.xsd">
+    <None Include="Service References\PdfServiceV2\service.wsdl" />
+    <None Include="Service References\PdfServiceV2\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV3\PdfWriterService.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV3\PdfWriterService.V1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV3\PdfWriterService.V2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV3\PdfWriterService.V3.wsdl" />
+    <None Include="Service References\PdfServiceV3\PdfWriterService.V3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV3\service.wsdl" />
+    <None Include="Service References\PdfServiceV3\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\PdfWriterService.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\PdfWriterService.V1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\PdfWriterService.V2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\PdfWriterService.V3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\PdfWriterService.V4.wsdl" />
+    <None Include="Service References\PdfServiceV4\PdfWriterService.V4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfServiceV4\service.wsdl" />
+    <None Include="Service References\PdfServiceV4\service.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\PdfSvc\" />
+    <WCFMetadataStorage Include="Service References\PdfServiceV1\" />
+    <WCFMetadataStorage Include="Service References\PdfServiceV2\" />
+    <WCFMetadataStorage Include="Service References\PdfServiceV3\" />
+    <WCFMetadataStorage Include="Service References\PdfServiceV4\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PdfSvc\configuration91.svcinfo" />
+    <None Include="Service References\PdfServiceV1\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PdfSvc\configuration.svcinfo" />
+    <None Include="Service References\PdfServiceV1\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PdfSvc\Reference.svcmap">
+    <None Include="Service References\PdfServiceV1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV3\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV3\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV3\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV4\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV4\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfServiceV4\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

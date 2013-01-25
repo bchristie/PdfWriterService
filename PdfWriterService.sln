@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWriterService.Host", "PdfWriterService.Host\PdfWriterService.Host.csproj", "{922D71F1-4DE9-4C48-B937-AF67FD8F3676}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWriterService.Consumer", "PdfWriterService.Consumer\PdfWriterService.Consumer.csproj", "{7C9C165E-DF44-48C8-BA4E-F6E7B4370AA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PdfWriterService.WinSvcInstall", "PdfWriterService.WinSvcInstall\PdfWriterService.WinSvcInstall.vdproj", "{131CA0FF-AEB0-4294-B4D2-93C5899EE1E8}"
 EndProject

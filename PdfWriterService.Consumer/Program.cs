@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using PdfWriterService.Consumer.PdfSvc;
+using PdfWriterService.Consumer.PdfServiceV4;
 
 namespace PdfWriterService.Consumer
 {
@@ -13,34 +13,23 @@ namespace PdfWriterService.Consumer
     {
         static void Main(string[] args)
         {
-            Byte[] pdfFile;
-            PdfWriterServiceV3Client client = new PdfWriterServiceV3Client();
+            PdfWriterServiceV4Client client = new PdfWriterServiceV4Client();
             try
             {
-                pdfFile = client.GenerateReburnPDF(new ReburnDTO
-                    {
-                        CustomrName = "Rapid Sheet Metal",
-                        EmployeeResponsibleID = "MMOORE",
-                        Comments = "Works on my machine (tm)",
-                        Issue = "Unable to reproduce"
-                    });
-
-                using (FileStream fs = File.OpenWrite("Reburn.pdf"))
+                Double[] testFileSizes = new[] { 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0 };
+                foreach (var testFileSize in testFileSizes)
                 {
-                    fs.Write(pdfFile, 0, pdfFile.Length);
-                    fs.Flush();
+                    Console.Write("Attempting to receive a PDF {0:n2}mb in size...", testFileSize);
+                    try 
+	                {	        
+		                Byte[] pdfFile = client.GenerateLargeFakePdfFile(testFileSize);
+                        Console.WriteLine("SUCCESS");
+	                }
+	                catch (Exception)
+	                {
+		                Console.WriteLine("FAILURE (Check maxReceivedMessageSize)");
+	                }
                 }
-
-                Console.WriteLine("PDF File Saved.");
-
-                Process proc = new Process
-                {
-                    StartInfo = new ProcessStartInfo
-                    {
-                        FileName = Path.Combine(Assembly.GetExecutingAssembly().Location, "Reburn.pdf")
-                    }
-                };
-                proc.Start();
             }
             catch (Exception ex)
             {
