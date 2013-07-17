@@ -97,6 +97,7 @@
   <ItemGroup>
     <None Include="..\PdfWriterService\App.config">
       <Link>App.config</Link>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <None Include="PdfWriterService.Host_TemporaryKey.pfx" />
